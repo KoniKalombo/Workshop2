@@ -1,0 +1,200 @@
+header {
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	width: 100%;
+}
+
+.sep {
+	border-right: 1px solid #dddddd;
+	display: inline-block;
+	height: 60px;
+	vertical-align: top;
+	content: "";
+	margin: 0 15px;
+}
+
+.headerMask {
+	background: url(../images/bg.png) no-repeat;
+	-webkit-transition: all 1s ease;
+	background-size: cover;
+	/*-webkit-filter: blur(4px);*/
+	position: fixed;
+	top: -20px;
+	margin-left: -64px;
+	margin-right: -34px;
+	z-index: 998;
+	width: 120%;
+	height: 110px;
+}
+
+.headerWrapper {
+	display: table;
+	width: 100%;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	background:rgba(255,255,255,0.7);
+	padding: 10px 0;
+	border-bottom: 1px solid #dddddd;
+}
+
+.headerWrapper .column:not(:last-child) {
+	padding: 10px 0;
+}
+
+.logoContent {
+	text-align: center !important;
+}
+
+.logoContent a {
+	display: inline-block;
+	width: 200px;
+	height: 37px;
+	top: 8px;
+	background: url(../images/logo.png) no-repeat center;
+}
+
+.imgHeaderBg {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 942px;
+	/*background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 1))), url(../images/bg.png) no-repeat;
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 1) 100%), url(../images/bg.png) no-repeat;
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 1) 100%), url(../images/bg.png) no-repeat;
+	background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 1) 100%), url(../images/bg.png) no-repeat;
+	background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 1) 100%), url(../images/bg.png) no-repeat;
+	background: linear-gradient(top, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 1) 100%), url(../images/bg.png) no-repeat;*/
+	background: url(../images/bg.png) no-repeat;
+	background-size: cover;
+	-webkit-transition: all 1s ease;
+	z-index: 0;
+}
+
+.imgColibri {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 942px;
+	background: url(../images/colibri.png) no-repeat;
+	background-size: cover;
+	-webkit-transition: all 1s ease;
+	z-index: 1;
+}
+
+.topIconContent {
+	height: 60px;
+	text-align: right !important;
+}
+
+.topIconContent a {
+	display: inline-block;
+	width: 70px;
+	height: 60px;
+}
+
+.searchIcon {
+	background: url(../images/search-icons.png) no-repeat left top;
+}
+.searchIcon:hover,
+.searchIcon.open{
+	background: url(../images/search-icons.png) no-repeat left bottom;
+}
+
+.topIconContent a.filterIcon {
+	background: url(../images/search-icons.png) no-repeat -88px top;
+	width: 40px;
+}
+.topIconContent a.filterIcon:hover,
+.topIconContent a.filterIcon.open{
+	background: url(../images/search-icons.png) no-repeat -88px bottom;
+}
+
+.ui.top.right.pointing.dropdown.notifArea .menu {
+	margin: -1px -21px 0em;
+}
+
+
+.alertIcon {
+	background: url(../images/search-icons.png) no-repeat right top;
+}
+.alertIcon:hover,
+.alertIcon.open{
+	background: url(../images/search-icons.png) no-repeat right bottom;
+}
+
+.basketArea {
+	display: inline-block;
+	vertical-align: 25px;
+}
+
+
+.timeline {
+	padding: 5px;
+	background-color: rgba(255,255,255,0.4);
+	font-size: 12px;
+}
+
+.timeline ul {
+	max-width: 982px;
+	margin: 0 auto;
+}
+
+.timeline a {
+	text-decoration: none;
+	color: #000;
+}
+
+.timeline a:hover,
+.timeline a.on {
+	color: #ec008c;
+}
+
+.timeline ul {
+	text-align-last: justify;
+	text-align: justify;
+	height: 1.6em;
+	line-height: 1.6;
+}
+
+.timeline ul:after
+{
+	content: "";
+	display: inline-block;
+	width: 100%;
+}
+
+.timeline ul li {
+	display: inline-block;
+}
+
+.dots {
+	width: 12px;
+	position: fixed;
+	top: 340px;
+	right: 50%;
+	margin-right: -541px;	
+}
+
+.pushed .dots {
+	right: 5%;
+	margin-right: 0;	
+}
+
+.dots a {
+	height: 12px;
+	display: block;
+	line-height: 12px;
+	position: relative;
+}
+
+.dots a span {
+	display: none;
+	position: absolute;
+	right: 15px;
+	top: -3px;
+}
+
+.dots a:hover span {
+	display: block;
+}

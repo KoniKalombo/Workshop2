@@ -1,0 +1,472 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vente-privee.com : grandes marques à prix discount</title>
+    
+    <link href="./images/favicon.png" type="image/x-icon" rel="shortcut icon" />
+    <link href="./images/favicon.png" type="image/x-icon" rel="icon" />
+    
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/semantic.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/container.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+  </head>
+  <body>
+    <a href="#" class="menuIcon hidetext">menu</a>
+    <div class="ui sidebar">
+      
+    </div>
+    <div class="wrapper">
+      <div class="imgColibri par"></div>
+      <div class="imgHeaderBg"></div>
+      <div class="headerMask"></div>
+      <header></header>
+
+    <div class="container">
+      
+    </div>
+<div class="footImg"></div> 
+    <footer>
+
+    </footer>
+    </div>
+
+
+ 
+  <script type="text/javascript" src="javascript/_dependent/greensock/TweenMax.min.js"></script>
+  <script type="text/javascript" src="javascript/_dependent/greensock/plugins/ScrollToPlugin.min.js"></script>
+  <script type="text/javascript" src="javascript/_dependent/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="javascript/TimelineMax.min.js"></script>
+   <!-- <script type="text/javascript" src="javascript/jquery.js"></script>-->
+    <script type="text/javascript" src="javascript/semantic.js"></script>
+    <script type="text/javascript" src="javascript/masonry.js"></script>
+    <script type="text/javascript" src="javascript/jquery.onscreen.js"></script>
+    <script type="text/javascript" src="javascript/jquery.scrollmagic.js"></script>
+    <script type="text/javascript" src="javascript/jquery-ui-1.10.4.min.js"></script>
+    
+
+    
+    <script>
+      $(".sidebar").load("files/sidebar-karl.html");
+      $("header").load("files/header.html", function( response, status, xhr ) {
+         $(".searchIcon").click(function() {
+            $(".SearchPop").fadeIn('slow');
+            $('#q').focus();
+          });
+
+
+
+
+          $(".filterIcon").click(function() {
+            $(".filterContent").fadeIn('slow');
+          });
+          $(".SearchPop .iclose").click(function() {
+            $(".SearchPop").fadeOut('fast');
+          });
+          
+          $('.ui.dropdown').dropdown();
+      });
+      $(".container").load("files/container2.html", function( response, status, xhr ) {
+        $('.ui.sidebar').sidebar('attach events', ".menuIcon");
+    
+        $(".menuIcon").click(function(event) {
+            if($(".ui.sidebar").hasClass("active")) {
+              $(".menuIcon").addClass("open");
+            }
+                else {
+                  $(".menuIcon").removeClass("open");
+            }
+        });
+        
+        /* GRID */
+        $(".mason").masonry({
+          columnWidth: 314,
+          "gutter": 20,
+          itemSelector: '.sales'
+        });
+
+
+        $('.ui.accordion')
+          .accordion();
+
+         $('.ui.checkbox')
+          .checkbox()
+        ;
+
+         /*SearchBar*/
+        var inputActive = false;
+        $('#search .searchResults a').click(function() {
+          if(inputActive == false) {
+            inputActive = true;
+            $(this).addClass("active");
+          }
+          else {
+            inputActive = false;
+            $(this).removeClass("active");
+          }
+        });
+
+        $(".filterContent .iclose").click(function(event) {
+          $(".filterContent").fadeOut("slow")
+        });
+        
+        $( "#search input" ).keypress(function() {
+            $(".ui.link.list").fadeOut('fast');
+            if($(this).val() == "runni") {
+            $('.searchResults').fadeIn('fast');
+
+          }
+        });
+
+          $(".SearchPop .iclose").click(function() {
+            $(".SearchPop").fadeOut('fast');
+          });
+
+        $(document).click(function() {
+            $('.searchResults').fadeOut('fast');
+         });
+
+
+        $(".ui.link.list a.item").click(function(event) {
+            $(".SearchResult").slideDown( "slow");
+
+            event.preventDefault(); 
+          });
+
+        $(".searchResults ul li a").click(function(event) {
+           // $(".SearchResult").slideDown( "slow");
+          
+         $('.sport.modal')
+          .modal('show');
+
+
+          $("#search input").attr("value", "running homme");
+            event.preventDefault(); 
+          });
+
+          $(".SearchResult img").click(function(event) {
+            $(".SearchResult").slideUp( "slow");
+            event.preventDefault(); 
+          });
+          /*end search*/
+
+          /* SCROLLABLE BU */     
+        // parallax
+       var controller = new ScrollMagic();
+        new ScrollScene({
+            triggerElement: ".clickAndDrink",
+            duration: $(window).height() + 264,
+            offset: -132
+          })
+          .addTo(controller)
+          .triggerHook("onCenter")
+          .setTween(new TimelineMax().add([
+     
+            TweenMax.to(".parallax .clickAndDrink", 1, {backgroundPosition: "0 100%", ease: Linear.easeOut})
+          ]));
+
+        new ScrollScene({
+            triggerElement: ".ticket",
+            duration: $(window).height() + 264,
+            offset: -132
+          })
+          .addTo(controller)
+          .triggerHook("onCenter")
+          .setTween(new TimelineMax().add([
+            TweenMax.to(".parallax .ticket", 1, {backgroundPosition: "0 100%", ease: Linear.easeOut})
+          ]));
+        new ScrollScene({
+            triggerElement: ".Rosedeal",
+            duration: $(window).height() + 264,
+            offset: -132
+          })
+          .addTo(controller)
+          .triggerHook("onCenter")
+          .setTween(new TimelineMax().add([
+     
+
+            TweenMax.to(".parallax .Rosedeal", 1, {backgroundPosition: "0 100%", ease: Linear.easeOut})
+          ]));
+
+        new ScrollScene({
+            triggerElement: ".MiamMiam",
+            duration: $(window).height() + 264,
+            offset: -132
+          })
+          .addTo(controller)
+          .triggerHook("onCenter")
+          .setTween(new TimelineMax().add([
+     
+            TweenMax.to(".parallax .MiamMiam", 1, {backgroundPosition: "0 100%", ease: Linear.easeOut})
+
+          ]));
+
+
+
+        var tween = TweenMax.to(".imgColibri", 0.5, {backgroundPosition: "0 -10%", ease: Linear.easeOut});
+        var tween2 = TweenMax.to(".imgColibri", 0.5, {backgroundPosition: "0 -30%", ease: Linear.easeOut});
+        var tween3 = TweenMax.to(".imgColibri", 0.5, {backgroundPosition: "0 -50%", ease: Linear.easeOut});
+        var tween4 = TweenMax.to(".imgColibri", 0.5, {backgroundPosition: "0 100%", ease: Linear.easeOut});
+
+
+        var scene = new ScrollScene({triggerElement: "#trigger1"})
+                .setTween(tween)
+                .addTo(controller);
+        var scene2 = new ScrollScene({triggerElement: "#trigger2", duration: 300})
+            .setTween(tween2)
+            .addTo(controller);
+
+        var scene3 = new ScrollScene({triggerElement: "#trigger3", duration: 300})
+            .setTween(tween3)
+            .addTo(controller);
+
+        var scene4 = new ScrollScene({triggerElement: "#trigger4", duration: 300})
+            .setTween(tween4)
+            .addTo(controller);
+
+
+ /* DRAGGABLE SALES */
+
+    $(".home .mason div.sales").draggable({
+      revert: true, 
+      helper: "clone",
+        appendTo: "body",
+        helper: "clone",
+        start: function( event, ui ) {
+      ui.helper.addClass("ui-resizable-helper");
+
+        }
+    });
+
+ /* DROPPABLE SALES */   
+
+     $(".dropElement").droppable({
+        activeClass: "ui-state-default",
+        hoverClass: "ui-state-hover",
+        accept: ":not(.ui-sortable-helper)",
+        drop: function(event, ui) {
+            $(this).find(".placeholder").remove();
+            $("<div></div>").html(ui.draggable.find(".titleSalesdrop").html())
+                .addClass("sbLine sbFav cf")
+                .appendTo(this);
+                /* <a href>*/
+                /*<span class="libelle">12 / 07</span>*/
+        }
+    });
+
+         /* var elems = $(".sales.bu");   
+            elems.onScreen({
+                container: window,
+                direction: 'vertical',
+                
+                doIn: function () {
+                 
+                  $(window).scroll(function(){
+                     var bgElem = $(".onScreen").children("img:first-child");
+                      bgElem.animate({top:"-60px"}, 3000, function() {
+                    });
+                  });
+
+                },
+
+                doOut: function () {
+                  imgOut   = $($(this).children()[0]);
+                  $($(this).children()[0]).removeAttr('class');
+     
+                },
+                tolerance: 0,
+                throttle: 1000,
+                toggleClass: 'onScreen',
+                lazyAttr: null,
+                lazyPlaceholder: 'someImage.jpg',
+                debug: false
+
+            });
+          */
+            $("#startrosedealimg").click(function(){
+              $("#startrosedealimg").attr("src", "images/Grille/anim_rosedeal.gif");
+      });
+
+              /* SLIDE */     
+              $(".timeline  li").click(function() {
+                $( "li" ).each(function( index ) {
+                  $(this).find("a").removeClass("on");
+        });
+                $(this).find("a").addClass("on");
+                var n = $(this).index();
+                var cal = n * 982;
+                $(".SalesContent").animate({"left": -1*cal});
+                if (n == 0) {
+                  $(".imgColibri").show();
+                  $(".imgHeaderBg").css({
+                    "background":"url(./images/bg.png) no-repeat",
+                    "background-size":"cover"
+                  });
+                  $(".headerMask").css({
+                    "background":"url(./images/bg.png) no-repeat",
+                    "background-size":"cover"
+                  });
+                  $(".footImg").css({
+                    "background":"url(./images/fbg.png) no-repeat",
+                    "background-size":"cover"
+                  });
+        }
+                if (n == 4) {
+                  $(".imgColibri").hide();
+                  $(".imgHeaderBg").css({
+                    "background":"url(./images/bg4.png) no-repeat",
+                    "background-size":"cover"
+                  });
+                  $(".headerMask").css({
+                    "background":"url(./images/bg4.png) no-repeat",
+                    "background-size":"cover"
+                  });
+                  $(".footImg").css({
+                    "background":"url(./images/fbg4.png) no-repeat",
+                    "background-size":"cover"
+                  });
+        }
+              });
+
+
+               // CAPTION 
+
+
+            $( ".sales" )
+              .mouseenter(function() {
+                 caption = $($(this).find(".caption"));
+                 iconAlert = $($(this).find(".icon-alert"));
+                  setTimeout(function(){
+                 caption.addClass("mid-up");
+                 iconAlert.fadeIn("speed");
+               }, 500);
+              })
+              .mouseleave(function() {
+                caption.removeClass("mid-up");
+                iconAlert.fadeOut("slow");
+              });
+
+               $(".cross").click(function(event) {
+
+                  if($(this).hasClass("rotate")) {
+                      $(this).removeClass("rotate");
+                      $(this).parent().removeClass("up");
+                  } else {
+                    $(this).parent().addClass("up");
+                    $(this).addClass("rotate");                    
+                  }
+
+                  event.preventDefault(); 
+               });
+
+               $(".sales .simple-caption a.play").click(function(event) {
+                  $(".videoContent").slideDown( "slow");
+                  $('video').get(0).play();
+               });
+
+
+
+/**/
+
+$(".ico")
+    .bind('mouseover',function(event){
+    
+      if( $(this).prev().is(":visible") ) {
+
+      } else {
+        $(this).prev().addClass("opening").fadeOut( "slow").show("speed");
+      }
+    
+    })
+    .bind('mouseleave',function(){
+      $(this).prev().removeClass("opening");
+    });
+
+  $(".alert-ico").click(function(event) {
+    $(this).addClass("bgpink");
+    $(this).prev().addClass("checkin");
+    $(this).prev().find("em").text("Alerte ajoutée !");
+    event.preventDefault(); 
+  });
+
+               $(".videoContent .iclose").click(function() {
+                  
+                  $(".videoContent").slideUp('slow');
+                  $('video').get(0).pause();
+                });
+                
+                $(".currentClick").click(function(event) {
+                  $("html, body").animate({ scrollTop: $('#CurrentSales').offset().top - 120 }, 1000);
+        });
+        
+        $(".newClick").click(function(event) {
+                  $("html, body").animate({ scrollTop: $('#NewSales').offset().top - 120 }, 1000);
+        });
+        
+        $(".comingClick").click(function(event) {
+                  $("html, body").animate({ scrollTop: $('#ComingSales').offset().top - 120 }, 1000);
+        });
+
+        /* NIV 1*/
+
+        $(".niv1").click(function(event) {
+          $(this).slideUp('slow');
+          $(this).parent().addClass("niv");
+        });
+
+        /* NIV 2*/
+       $(".niv2").click(function(event) {
+        $('.test.modal')
+          .modal('show');
+        });
+
+        /*$(document).scroll(function() {
+
+          var top = $(document).scrollTop();
+          var heightdoc =  $(document).outerHeight(true);
+          console.log(top);
+          console.log(heightdoc);
+          if (top/heightdoc >= 0.8) {
+            console.log("top !!!");
+            $(".imgHeaderBg").css({"background":"none"});
+          }
+          else {
+            $(".imgHeaderBg").css({"background":"url(./images/bg.png)"});
+          }
+
+        });*/
+
+
+        // hide DOTS
+//
+//        $(".footImg").onScreen({
+//          container: window,
+//          direction: 'vertical',
+//
+//          doIn: function () {
+//            $(".dots").fadeOut(500);
+//          },
+//
+//          doOut: function () {
+//            $(".dots").fadeIn(500);
+//          },
+//          tolerance: 0,
+//          throttle: 1000,
+//          toggleClass: 'onScreen',
+//          lazyAttr: null,
+//          debug: false
+//
+//        });
+
+            });
+      $("footer").load("files/footer.html");
+      
+      
+    </script>
+  </body>
+</html>
