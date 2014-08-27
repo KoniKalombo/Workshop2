@@ -1,3 +1,81 @@
+var nbSlideHome = $("#CatalogSales .slideHome").length;
+var windowWith  = $(window).width();
+var $imgIndex    = 0; 
+
+
+/*********************************************************/
+/*         SLIDE   HOME DESIGN - TOP                     */
+/*********************************************************/
+var PositionMenu = $(".menuHome").offset();
+/* Next */
+
+$('.next').click(function() {
+  if($imgIndex < ($("#CatalogSales .slideHome").length -1))
+    $imgIndex++;
+  else
+    $imgIndex = 0;
+
+  $("#CatalogSales").animate({left: -($imgIndex * 100) +'%'}, 800, 'easeInQuart'); // Dynamic value
+});
+
+
+
+/*********************************************************/
+/*                     SLIDE PRODUCT                     */
+/*********************************************************/
+
+$('.salesProduct').each(function(){
+  var SalesIndex    = 0; 
+  var nbProducts = $(this).find(".SPcontent img").length;
+  $(this).find(".SPcontent").width(nbProducts*100+'%');
+ // console.log(nbProducts*100+'%');
+
+$(this).find('a.nxt').click(function(e) {
+  e.preventDefault();
+
+  if(SalesIndex < (nbProducts -1))
+    SalesIndex++;
+  else
+    SalesIndex = 0;
+
+  $(this).parent().prev().animate({left: -(SalesIndex * 100) +'%'}, 800, 'easeInQuart'); // Dynamic value
+});
+
+});
+
+
+/*********************************************************/
+/*                    SCROLL HIDE/SHOW MENU              */
+/*********************************************************/
+
+$(window).scroll(function() {
+
+  if($(window).scrollTop()>600) { 
+    $(".timeline").hide();
+    $(".menuHome").addClass("Menuhomefixed");
+  } else {
+    $(".timeline").show();
+     $(".menuHome").removeClass("Menuhomefixed");
+  }
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+ $(".slideHome").width(windowWith);
+ $("#CatalogSales").width(windowWith*nbSlideHome);
+
+
  $(".sidebar").load("files/sidebar-maria.html");
       $("header").load("files/header.html", function( response, status, xhr ) {
 
@@ -138,7 +216,7 @@
         // parallax
        	var controller = new ScrollMagic();
         
-        new ScrollScene({
+       /* new ScrollScene({
             triggerElement: ".accueilBu",
             duration: $(window).height() + 264,
             offset: -132
@@ -225,6 +303,7 @@
             TweenMax.to(".parallax .Pass", 1, {backgroundPosition: "0 100%", ease: Linear.easeOut})
 
           ]));
+        
 
 
 
@@ -248,7 +327,7 @@
         var scene4 = new ScrollScene({triggerElement: "#trigger4", duration: 300})
             .setTween(tween4)
             .addTo(controller);
-
+        */
 
     
 
